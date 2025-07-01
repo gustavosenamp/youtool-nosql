@@ -4,12 +4,89 @@
     ViewData["Title"] = "Comentários do YouTube";
 }
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<style>
+    body {
+        background-color: #121212;
+        color: #fff;
+        font-family: Arial, sans-serif;
+    }
+
+    .card {
+        background-color: #000;
+        border: 2px solid #FFD700;
+        border-radius: .5rem;
+        color: #fff;
+    }
+
+    .form-label {
+        color: #FFD700;
+        font-weight: 600;
+    }
+
+    input.form-control {
+        background-color: #222;
+        border: 1px solid #555;
+        color: #fff;
+    }
+
+    input.form-control::placeholder {
+        color: #bbb;
+    }
+
+    input.form-control:focus {
+        background-color: #333;
+        border-color: #FFD700;
+        color: #fff;
+        box-shadow: 0 0 5px #FFD700;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-success:hover,
+    .btn-success:focus {
+        background-color: #218838;
+        border-color: #1e7e34;
+        color: #fff;
+    }
+
+    h2.fw-bold {
+        color: #FFD700;
+    }
+
+    p.text-muted {
+        color: #bbb !important;
+    }
+
+    /* Alert styles */
+    .alert-success {
+        background-color: #223322;
+        border-color: #28a745;
+        color: #a3dca3;
+    }
+
+    .alert-danger {
+        background-color: #552222;
+        border-color: #dc3545;
+        color: #f5a3a3;
+    }
+
+    .btn-close {
+        filter: invert(1);
+    }
+</style>
+
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
 
             <div class="text-center mb-4">
-                <h2 class="fw-bold text-primary">Busque o nome de um Canal no YouTube</h2>
+                <h2 class="fw-bold">Busque o nome de um Canal no YouTube</h2>
                 <p class="text-muted">Digite o nome ou ID do canal para buscar os comentários</p>
             </div>
 
@@ -33,7 +110,7 @@
                 <div class="card-body">
                     <form asp-action="Canal" method="get">
                         <div class="mb-3">
-                            <label for="termo" class="form-label fw-semibold">Buscar Canal:</label>
+                            <label for="termo" class="form-label">Buscar Canal:</label>
                             <input type="text" name="termo" id="termo" class="form-control" placeholder="Nome ou ID do canal" required />
                         </div>
                         <div class="text-end">
@@ -48,3 +125,5 @@
         </div>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
