@@ -1,0 +1,23 @@
+﻿@model List<youtool_nosql.Models.Comment>
+
+@{
+    ViewData["Title"] = "Comentários do YouTube";
+}
+
+<h2>Busque o nome de um Canal no Youtube</h2>
+
+@if (TempData["Mensagem"] != null)
+{
+    <div class="alert alert-success">@TempData["Mensagem"]</div>
+}
+@if (TempData["Erro"] != null)
+{
+    <div class="alert alert-danger">@TempData["Erro"]</div>
+}
+
+<form asp-action="Canal" method="get" class="mb-3">
+    <label for="termo">Buscar Canal:</label>
+    <input type="text" name="termo" id="termo" class="form-control" placeholder="Nome ou ID do canal" required />
+    <button type="submit" class="btn btn-success mt-2">Buscar Canal</button>
+</form>
+
